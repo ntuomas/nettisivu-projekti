@@ -10,7 +10,7 @@ class KirjoitusListView(ListView):
 class KirjoitusDetailView(DetailView):
     model = Kirjoitus
     template_name = "yksityiskohdat.html"
-    context_object_name = 'kaikkikirjoitukset' #korvataan object_list
+    context_object_name = 'kaikkikirjoitukset' #korvataan object_list-nimi
 
 class KirjoitusCreateView(CreateView):
     model = Kirjoitus
