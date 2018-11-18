@@ -4,11 +4,12 @@
 
 
   <h3>{{ kaikkikirjoitukset.otsikko }}</h3>
+  <br />
   <p>{{ kaikkikirjoitukset.teksti }}</p>
 
-
-<h5><a href="{% url 'muokkaa' kaikkikirjoitukset.pk %}">Muokkaa kirjoitustasi!</a></h5>
-<h5><a href="{% url 'poista' kaikkikirjoitukset.pk %}">Poista kirjoituksesi!</a></h5>
+<hr />
+<h5><a href="{% url 'muokkaa' kaikkikirjoitukset.pk %}">Muokkaa kirjoitusta!</a></h5>
+<h5><a href="{% url 'poista' kaikkikirjoitukset.pk %}">Poista kirjoitus!</a></h5>
 
 
 {% endblock %}
