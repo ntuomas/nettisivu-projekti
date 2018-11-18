@@ -1,6 +1,7 @@
 from django.db import models
 from django.urls import reverse
 
+
 class Kirjoitus(models.Model):
     kirjoittaja = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     otsikko = models.CharField(max_length=100)
