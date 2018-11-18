@@ -1,0 +1,15 @@
+{% extends 'pohja.html' %}
+
+{% block content %}
+
+
+<form action="" method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+
+<h3>Haluatko varmasti poistaa kirjoituksen: "{{kaikkikirjoitukset.otsikko}}"?</h3>
+<input type="submit" value="Kyllä!">
+
+</form>
+
+{% endblock %}

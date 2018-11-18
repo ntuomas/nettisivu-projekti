@@ -1,0 +1,19 @@
+{% extends 'pohja.html' %}
+
+{% block content %}
+
+
+<h2>Kirjoita tähän jotain:</h2>
+
+<form action="" method="POST">
+  {% csrf_token %}
+
+  {{ form.as_p }} <!--as_p tulee paragraph-sanasta-->
+
+  <input type="submit" value="Tallenna!">
+
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'pohja.html' %}
+
+{% block content %}
+
+
+<br />
+<p>Tämä sivusto on esimerkkitoteutus OHSIHA-kurssille. Tarkoitus on antaa ohjeet kehitysympäristön perustamiselle sekä CRUD-ominaisuuksien toteuttamiselle.
+Sivustolla ei ole sen suurempaa ideaa muuta kuin, että voit lisätä kirjoituksen, muokata sitä ja poistaa sen. Eli hyvin yksinkertainen CRUD-sivusto.  </p>
+<hr />
+<hr />
+
+{%  if user.is_authenticated %}
+
+{% for kirjotus in object_list %}
+<div class="kirjoitus">
+  <h3><a href="{% url 'yksityiskohdat' kirjotus.pk %}">{{ kirjotus.otsikko}}</a></h3>
+  <p>{{  kirjotus.teksti }}</p>
+</div>
+<hr />
+{% endfor %}
+{% endif %}
+
+
+
+{% endblock %}
