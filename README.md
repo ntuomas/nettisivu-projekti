@@ -64,7 +64,7 @@ eli esimerkkitoteutuksessa
 (myvenv) $ python manage.py startapp kirjoitukset
 ```
 Nyt kun katsot tekstieditoriasi, näet uuden kirjoitukset-kansion nettisivu-projektin sisällä. Tässä vaiheessa kannattaa mennä lisäämään nettisivu-kansion settings.py-tiedoston INSTALLED_APPS-kohtaan 'kirjoitukset'.
-Kirjoitukset-kansion muokattavat tiedostot ovat models.py ja views.py. Luo lisäksi urls.py-niminen tiedosto.
+Kirjoitukset-kansion muokattavat tiedostot ovat models.py ja views.py. Luo lisäksi urls.py-niminen tiedosto. Luo myös nettisivu-projektin sisälle uusi templates-kansio, johon lisäät html-tiedostot. Hyvin tärkeää on lisätä "os.path.join(BASE_DIR), 'templates'" settings.py:n TEMPLATES:n DIR-kohtaan.
 
 ### models.py-tiedosto
 ```
@@ -197,3 +197,5 @@ class SignUpView(generic.CreateView):
     success_url = reverse_lazy('login')
 ```
 Tässä käytetään siis valmista UserCreationForm:a. Ulkonäöllisesti kyseessä ei ole ehkä se kaunein vaihtoehto, mutta ajaa asiansa. Sisään- ja uloskirjautuminen on myös todella yksinkertaista. Luo templates-kansioon uusi registration-kansio, jonka sisään teet login.html-tiedoston, jolloin Djangon _django.contrib.auth.views.login_ automaattisesti hoitaa sisään-ja uloskirjautumiseen liittyvät asiat.
+
+###### Tässä ohjeessa pyrittiin antamaan käsitys, miten kehitysympäristö perustetaan ja CRUD-toiminnallisuudet toteutetaan. Suosittelen kuitenkin tämän lisäksi lukemaan Djangon dokumentaatiota, jossa kerrotaan tarkemmin esimerkiksi näkymien toiminnasta.
